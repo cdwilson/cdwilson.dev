@@ -13,7 +13,7 @@ author = "Chris Wilson"
 license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Chris Wilson's personal website"
 keywords = ""
-info = ["I build { electronic | manufacturing } products."]
+info = ["I build products.", "Usually with electronics."]
 avatarURL = "images/cdwilson.jpg"
 dateFormat = "January 2, 2006"
 since = 2022
