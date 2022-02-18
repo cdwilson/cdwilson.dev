@@ -110,8 +110,13 @@ weight = 3
 url = "projects/"
 
 [[menu.main]]
-name = "Contact"
+name = "Résumé"
 weight = 4
+url = "https://github.com/cdwilson/resume/raw/gh-pages/christopher_wilson_resume.pdf"
+
+[[menu.main]]
+name = "Contact"
+weight = 5
 url = "contact/"
 
 [markup]
