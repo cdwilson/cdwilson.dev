@@ -121,4 +121,4 @@ url = "contact/"
 
 [markup]
   [markup.highlight]
-    style = 'monokailight'
+    style = 'monokai'
