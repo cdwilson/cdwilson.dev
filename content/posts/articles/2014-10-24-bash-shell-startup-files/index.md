@@ -4,7 +4,7 @@ authors:
 - Chris Wilson
 date: "2014-10-24"
 draft: false
-comments: true
+disableComments: false
 slug: bash-shell-startup-files
 tags:
 - Bash shell
