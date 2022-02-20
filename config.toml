@@ -68,6 +68,9 @@ series = "series"
 tag = "tags"
 author = "authors"
 
+[permalinks]
+  posts = '/:sections[1:]/:slug/'
+
 [[params.social]]
 name = "Github"
 icon = "fa fa-2x fa-github"
@@ -104,10 +107,10 @@ name = "Writing"
 weight = 2
 url = "articles/"
 
-[[menu.main]]
-name = "Projects"
-weight = 3
-url = "projects/"
+# [[menu.main]]
+# name = "Projects"
+# weight = 3
+# url = "projects/"
 
 [[menu.main]]
 name = "Résumé"
