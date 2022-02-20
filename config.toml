@@ -112,7 +112,7 @@ url = "projects/"
 [[menu.main]]
 name = "Résumé"
 weight = 4
-url = "https://github.com/cdwilson/resume/raw/gh-pages/christopher_wilson_resume.pdf"
+url = "https://cdwilson.github.io/resume/"
 
 [[menu.main]]
 name = "Contact"
