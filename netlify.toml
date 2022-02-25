@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/articles/understanding-the-INA219/"
+  to = "https://flyingcamp.design/articles/understanding-the-ina219/"
+  status = 301
+  force = true
