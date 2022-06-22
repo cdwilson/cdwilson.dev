@@ -5,7 +5,7 @@ languageCode = "en"
 defaultContentLanguage = "en"
 paginate = 20
 enableEmoji = true
-# disqusShortname = "cdwilson-dev"
+disqusShortname = "cdwilson-dev"
 enableGitInfo = true
 
 [params]
