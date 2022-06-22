@@ -6,9 +6,9 @@ date: "2014-07-06"
 draft: false
 slug: understanding-the-ina219
 tags:
-- TI
 - I2C
 - current monitor
+- TI
 - INA219
 math: true
 typora-copy-images-to: ./images
