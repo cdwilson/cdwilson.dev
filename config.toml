@@ -16,7 +16,7 @@ keywords = ""
 info = ["I build things.", "Usually with electronics.", "Preferably open-source."]
 avatarURL = "images/cdwilson.jpg"
 dateFormat = "January 2, 2006"
-since = 2022
+since = 2014
 # Git Commit in Footer, uncomment the line below to enable it
 # commit = "https://github.com/cdwilson/cdwilson.dev/tree"
 # Right To Left, shift content direction for languagues such as Arabic
@@ -39,28 +39,28 @@ customSCSS = []
 customJS = []
 
 # If you want to implement a Content-Security-Policy, add this section
-[params.csp]
-childsrc = ["'self'"]
-fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
-formaction = ["'self'"]
-framesrc = ["'self'"]
-imgsrc = ["'self'"]
-objectsrc = ["'none'"]
-stylesrc = [
-  "'self'",
-  "'unsafe-inline'",
-  "https://fonts.googleapis.com/",
-  "https://cdn.jsdelivr.net/"
-]
-scriptsrc = [
-  "'self'", 
-  "'unsafe-inline'", 
-  "https://www.google-analytics.com",
-  "https://cdn.jsdelivr.net/"
-]
-prefetchsrc = ["'self'"]
+# [params.csp]
+# childsrc = ["'self'"]
+# fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
+# formaction = ["'self'"]
+# framesrc = ["'self'"]
+# imgsrc = ["'self'"]
+# objectsrc = ["'none'"]
+# stylesrc = [
+#   "'self'",
+#   "'unsafe-inline'",
+#   "https://fonts.googleapis.com/",
+#   "https://cdn.jsdelivr.net/"
+# ]
+# scriptsrc = [
+#   "'self'", 
+#   "'unsafe-inline'", 
+#   "https://www.google-analytics.com",
+#   "https://cdn.jsdelivr.net/"
+# ]
+# prefetchsrc = ["'self'"]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
-connectsrc = ["'self'", "https://www.google-analytics.com"]
+# connectsrc = ["'self'", "https://www.google-analytics.com"]
 
 [taxonomies]
 category = "categories"
