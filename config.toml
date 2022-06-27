@@ -126,7 +126,7 @@ url = "contact/"
   [markup.highlight]
     style = 'monokai'
 
-[params.gisqus]
+[params.giscus]
 repo = "cdwilson/cdwilson.dev"
 repoID = "R_kgDOGzJrfg"
 category = "Articles"

@@ -1,24 +1,24 @@
 ---
-title: Using gisqus for comments in Hugo
+title: Using giscus for comments in Hugo
 authors:
 - Chris Wilson
 date: "2022-06-26"
 draft: false
-slug: using-gisqus-for-comments-in-hugo
+slug: using-giscus-for-comments-in-hugo
 tags:
 - hugo
 - comments
-- gisqus
+- giscus
 typora-copy-images-to: ./images
 ---
 
-After looking into a [couple](https://getreplybox.com/) [different](https://talk.hyvor.com/) [hosted](https://fastcomments.com/) [options](https://commento.io/) for enabling comments on this site, I decided to give [gisqus](https://giscus.app/) a try.  
+After looking into a [couple](https://getreplybox.com/) [different](https://talk.hyvor.com/) [hosted](https://fastcomments.com/) [options](https://commento.io/) for enabling comments on this site, I decided to give [giscus](https://giscus.app/) a try.  
 
-This article describes why I chose gisqus and how to set it up in a Hugo site.
+This article describes why I chose giscus and how to set it up in a Hugo site.
 
-# First: why gisqus?
+# First: why giscus?
 
-It's worth talking through the thought process for how I landed on gisqus, as it's probably not the right option for everybody.
+It's worth talking through the thought process for how I landed on giscus, as it's probably not the right option for everybody.
 
 Derek Kay has an [excellent article](https://darekkay.com/blog/static-site-comments/) which explores various ways to include comments on a static site.  After reviewing many of the options he mentioned in the article, I found that I mostly agree with his conclusion:
 
@@ -29,7 +29,7 @@ Derek Kay has an [excellent article](https://darekkay.com/blog/static-site-comme
 > - Who is your target audience?
 > - Do you want to build a community?
 
-None of the options listed in his article were a perfect solution for me, including gisqus.  However, I found gisqus to be the best option given my specific requirements for this site.
+None of the options listed in his article were a perfect solution for me, including giscus.  However, I found giscus to be the best option given my specific requirements for this site.
 
 **Requirement #1:** Have comments on this site.
 
@@ -51,7 +51,7 @@ Having to maintain a self-hosted comment solution felt like it defeated the "set
 
 This one might seem a little counterintuitive, but I wanted there to be a little friction required to post a comment.  Mainly to prevent spam, but also to ensure that there was some intention and thought required before someone can blast away with "this article is trash and you suck."
 
-While I'm not totally thrilled that gisqus *requires* a GitHub login, any option that doesn't allow anonymous comments will require some kind of login (or at least name + email).  I figure that the audience for this site will be mostly technical, so the chances that they already have a GitHub login are pretty high.
+While I'm not totally thrilled that giscus *requires* a GitHub login, any option that doesn't allow anonymous comments will require some kind of login (or at least name + email).  I figure that the audience for this site will be mostly technical, so the chances that they already have a GitHub login are pretty high.
 
 **Requirement #6:** Low "[bus factor](https://en.wikipedia.org/wiki/Bus_factor)" risk.
 
@@ -65,27 +65,27 @@ I'm already using GitHub to host [the source](https://github.com/cdwilson/cdwils
 
 I wanted an integrated solution that could support forum-style discussion threads in addition to comments on individual articles.  This can be done with discourse (e.g. https://blog.codinghorror.com/), but I didn't want to pay [$100/mo for a hosted instance](https://www.discourse.org/pricing) or have to deal with [hosting it myself for free](https://jlericson.com/2021/04/06/oracle_discourse.html).
 
-# How to set up gisqus comments in Hugo
+# How to set up giscus comments in Hugo
 
 The https://giscus.app page has a configuration questionaire that will automatically generate a `<script>` tag that can be embedded in your site.  
 
-In order to make the options configurable via Hugo's `config.toml` file, we can create a [Hugo partial template](https://gohugo.io/templates/partials/) in `layouts/posts/gisqus.html`:
+In order to make the options configurable via Hugo's `config.toml` file, we can create a [Hugo partial template](https://gohugo.io/templates/partials/) in `layouts/posts/giscus.html`:
 
 ```html
-{{- if isset .Site.Params "gisqus" -}}
-  {{- if and (isset .Site.Params.gisqus "repo") (not (eq .Site.Params.gisqus.repo "" )) (eq (.Params.disable_comments | default false) false) -}}
+{{- if isset .Site.Params "giscus" -}}
+  {{- if and (isset .Site.Params.giscus "repo") (not (eq .Site.Params.giscus.repo "" )) (eq (.Params.disable_comments | default false) false) -}}
   <script src="https://giscus.app/client.js"
-    data-repo="{{ .Site.Params.gisqus.repo }}"
-    data-repo-id="{{ .Site.Params.gisqus.repoID }}"
-    data-category="{{ .Site.Params.gisqus.category }}"
-    data-category-id="{{ .Site.Params.gisqus.categoryID }}"
-    data-mapping="{{ default "pathname" .Site.Params.gisqus.mapping }}"
-    data-reactions-enabled="{{ default "1" .Site.Params.gisqus.reactionsEnabled }}"
-    data-emit-metadata="{{ default "0" .Site.Params.gisqus.emitMetadata }}"
-    data-input-position="{{ default "bottom" .Site.Params.gisqus.inputPosition }}"
-    data-theme="{{ default "light" .Site.Params.gisqus.theme }}"
-    data-lang="{{ default "en" .Site.Params.gisqus.lang }}"
-    data-loading="{{ default "lazy" .Site.Params.gisqus.loading }}"
+    data-repo="{{ .Site.Params.giscus.repo }}"
+    data-repo-id="{{ .Site.Params.giscus.repoID }}"
+    data-category="{{ .Site.Params.giscus.category }}"
+    data-category-id="{{ .Site.Params.giscus.categoryID }}"
+    data-mapping="{{ default "pathname" .Site.Params.giscus.mapping }}"
+    data-reactions-enabled="{{ default "1" .Site.Params.giscus.reactionsEnabled }}"
+    data-emit-metadata="{{ default "0" .Site.Params.giscus.emitMetadata }}"
+    data-input-position="{{ default "bottom" .Site.Params.giscus.inputPosition }}"
+    data-theme="{{ default "light" .Site.Params.giscus.theme }}"
+    data-lang="{{ default "en" .Site.Params.giscus.lang }}"
+    data-loading="{{ default "lazy" .Site.Params.giscus.loading }}"
     crossorigin="anonymous"
     async>
   </script>
@@ -97,14 +97,14 @@ Then, we can include this partial in the footer of the post template (e.g. `layo
 
 ```html
 <footer>
-  {{ partial "posts/gisqus.html" . }}
+  {{ partial "posts/giscus.html" . }}
 </footer>
 ```
 
 Finally, we can configure the options in the site's `config.toml` file:
 
 ```toml
-[params.gisqus]
+[params.giscus]
 repo = "cdwilson/cdwilson.dev"
 repoID = "R_kgDOGzJrfg"
 category = "Articles"
