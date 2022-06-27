@@ -28,7 +28,7 @@ rtl = false
 # "light" (light background, dark foreground) (default)
 colorScheme = "light"
 # Hide the toggle button, along with the associated vertical divider
-hideColorSchemeToggle = false
+hideColorSchemeToggle = true
 # Series see also post count
 maxSeeAlsoItems = 5
 # Custom CSS
