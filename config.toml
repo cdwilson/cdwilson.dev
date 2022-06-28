@@ -112,10 +112,10 @@ url = "articles/"
 # weight = 3
 # url = "projects/"
 
-[[menu.main]]
-name = "Résumé"
-weight = 4
-url = "https://cdwilson.github.io/resume/"
+# [[menu.main]]
+# name = "Résumé"
+# weight = 4
+# url = "https://cdwilson.github.io/resume/"
 
 [[menu.main]]
 name = "Contact"
