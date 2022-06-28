@@ -9,6 +9,7 @@ tags:
 - hugo
 - comments
 - giscus
+disableComments: false
 typora-copy-images-to: ./images
 ---
 
@@ -67,7 +68,7 @@ I wanted an integrated solution that could support forum-style discussion thread
 
 # How to set up giscus comments in Hugo
 
-The https://giscus.app page has a configuration questionaire that will automatically generate a `<script>` tag that can be embedded in your site.  
+The https://giscus.app page has a configuration questionnaire that will automatically generate a `<script>` tag that can be embedded in your site.  
 
 In order to make the options configurable via Hugo's `config.toml` file, we can create a [Hugo partial template](https://gohugo.io/templates/partials/) in `layouts/posts/giscus.html`:
 
