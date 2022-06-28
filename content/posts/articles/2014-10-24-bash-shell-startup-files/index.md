@@ -9,6 +9,7 @@ tags:
 - Bash shell
 - Terminal.app
 - macOS
+disableComments: false
 typora-copy-images-to: ./images
 ---
 
