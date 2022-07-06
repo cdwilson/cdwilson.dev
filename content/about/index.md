@@ -6,7 +6,7 @@ typora-copy-images-to: ./images
 
 I'm passionate about building things that make electronics more approachable and accessible to everyone.
 
-For most of my career, I've worked as a hardware design engineer 🤓 specializing in embedded systems 🤖
+I spent most of my career working as a hardware design engineer 🤓 specializing in embedded systems 🤖
 
 Over the last couple years, I took a hiatus from design and worked as a product manager 📊 in a PCBA manufacturing startup 🏭
 
