@@ -135,6 +135,16 @@ mapping = "og:title"
 reactionsEnabled = "1"
 emitMetadata = "0"
 inputPosition = "bottom"
-theme = "light"
+theme = "preferred_color_scheme"
 lang = "en"
 loading = "lazy"
+
+# https://gohugo.io/about/hugo-and-gdpr/
+[privacy]
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
