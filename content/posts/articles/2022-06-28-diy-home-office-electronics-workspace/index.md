@@ -171,7 +171,7 @@ It works again!
 
 If you want the most...uhh..."entertaining" and informative introduction to ESD, check out this video from the inventor of the original pink poly ESD bag:
 
-[ESD Explained & Demonstrated + History of the Pink Polyethylene ESD Bag](https://youtu.be/Uk5F3rQNUkU)
+📺 [ESD Explained & Demonstrated + History of the Pink Polyethylene ESD Bag](https://youtu.be/Uk5F3rQNUkU)
 
 # USB hub with individual power switches
 
