@@ -18,7 +18,7 @@ typora-copy-images-to: ./images
 
 I've been wanting to set up a small electronics workspace in my home office for a while now.  The main goal was to have an ESD-safe area in the office where I could do bring-up and testing for projects that require a connection to a computer and test equipment.  I already have a separate full size electronics workbench in the garage (SMT reflow oven, hot air rework, microscope, etc), so this was intended as a more focused compliment to that space, rather than a replacement for it.
 
-I've made a couple small improvements since this original tweet, so I wanted to post a follow-up with a more detailed look at the build process and some of the things I learned along the way.
+I've made a couple small improvements since the original tweet below, so I wanted to post a follow-up with a more detailed look at the build process and some of the things I learned along the way.
 
 {{< tweet user="chrismakesstuff" id="1527045357414191104" >}}
 
@@ -169,9 +169,9 @@ It works again!
 
 **An ESD intermezzo**
 
-If you want the most...shall we say..."entertaining" and informative introduction to ESD, check out this video from the inventor of the original pink poly ESD bag:
+If you want the most...uhh..."entertaining" and informative introduction to ESD, check out this video from the inventor of the original pink poly ESD bag:
 
-{{< youtube Uk5F3rQNUkU >}}
+[ESD Explained & Demonstrated + History of the Pink Polyethylene ESD Bag](https://youtu.be/Uk5F3rQNUkU)
 
 # USB hub with individual power switches
 
