@@ -179,4 +179,20 @@ Now, open the schematic, choose "Place" → "Add Symbol", and you should be able
 
 ![add_symbol](images/add_symbol.png)
 
+# Browse the database directly
+
+You can browse/edit the SQLite database file directly using the `DB Browser for SQLite.app`. Open the `database.sqlite` library file in DB Browser for SQLite:
+
+![open_database_file](images/open_database_file.png)
+
+You can view the database schema:
+
+![database_structure](images/database_structure.png)
+
+ Or browse the data contained in the tables:
+
+![browse_data](images/browse_data.png)
+
+# Feedback
+
 Anything I got wrong? Let me know in the comments below.
