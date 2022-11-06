@@ -79,26 +79,26 @@ author = "authors"
 name = "Github"
 icon = "fa fa-2x fa-github"
 weight = 1
-url = "https://github.com/cdwilson/"
+url = "https://github.com/cdwilson"
 
 [[params.social]]
 name = "Mastodon"
 icon = "fa fa-2x fa-mastodon"
 weight = 2
-url = "https://mastodon.social/@cdwilson/"
+url = "https://mastodon.social/@cdwilson"
 rel = "me"
 
 [[params.social]]
 name = "Twitter"
 icon = "fa fa-2x fa-twitter"
 weight = 2
-url = "https://twitter.com/chrismakesstuff/"
+url = "https://twitter.com/chrismakesstuff"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 3
-url = "https://www.linkedin.com/in/cdwilson/"
+url = "https://www.linkedin.com/in/cdwilson"
 
 [[params.social]]
 name = "RSS"
