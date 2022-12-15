@@ -118,10 +118,10 @@ name = "Writing"
 weight = 2
 url = "articles/"
 
-# [[menu.main]]
-# name = "Projects"
-# weight = 3
-# url = "projects/"
+[[menu.main]]
+name = "Projects"
+weight = 3
+url = "projects/"
 
 # [[menu.main]]
 # name = "Résumé"
