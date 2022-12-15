@@ -118,7 +118,7 @@ Click the "Add a driver" button:
 
 In the dialog box, input the following settings and click "OK":
 
-**Description of the driver:** `SQLite`
+**Description of the driver:** `SQLite3`
 
 **Driver file name:** `/usr/local/lib/libsqlite3odbc.dylib`
 
