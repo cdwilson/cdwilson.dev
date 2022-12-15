@@ -1,10 +1,10 @@
 ---
-title: KiCad database libraries on Apple Silicon
+title: KiCad database libraries on macOS
 authors:
 - Chris Wilson
-date: "2022-11-04"
+date: "2022-12-14"
 draft: false
-slug: kicad-database-libraries-on-apple-silicon
+slug: kicad-database-libraries-on-macos
 tags:
 - KiCad
 - SQLite
@@ -12,11 +12,11 @@ disableComments: false
 typora-copy-images-to: ./images
 ---
 
-{{< notice warning >}}
+{{< notice info >}}
 
-On December 11, 2022 the KiCad team [announced](https://social.adamwolf.org/@adamwolf/109496840211680309) support for macOS universal builds in the 6.99 [nightly releases](https://www.kicad.org/download/macos/). Using a universal build greatly simplifies the process of setting up database libraries and is *strongly recommended*. If you are using a universal nightly build released after December 12, 2022 (the file starts with `kicad-unified-universal`), make sure to follow the updated instructions found here:
+On December 11, 2022 the KiCad team [announced](https://social.adamwolf.org/@adamwolf/109496840211680309) support for macOS universal builds in the 6.99 [nightly releases](https://www.kicad.org/download/macos/). Using a universal build greatly simplifies the process of setting up database libraries and is *strongly recommended*. If you are using an `x86_64` nightly build released before December 12, 2022 (i.e. the file does *NOT* start with `kicad-unified-universal`), make sure to follow the old instructions found here:
 
-https://cdwilson.dev/articles/kicad-database-libraries-on-macos/
+https://cdwilson.dev/articles/kicad-database-libraries-on-apple-silicon/
 
 {{< /notice >}}
 
@@ -28,68 +28,18 @@ A new "Database Libraries" feature was [recently added](https://gitlab.com/kicad
 >
 > Using database libraries allows you to create fully-defined parts (sometimes called **atomic parts**) out of KiCad symbols and footprints without needing to store all the part properties in a symbol library. The external database can be linked to third-party tools for managing part data and lifecycles. Database library workflows are generally more complex than the standard KiCad library workflows, and so this type of library is typically only used in situations where it makes managing a large library of fully-defined parts more efficient (such as in organization or team settings).
 
-In this article, I'm going to show you how to configure KiCad to use a SQLite-based database library with KiCad on macOS running on Apple Silicon.
+In this article, I'm going to show you how to configure KiCad to use a SQLite-based database library with KiCad on macOS.
 
 # SQLite ODBC Driver setup on macOS
 
 The initial implementation of the database libraries feature only supports [Open Database Connectivity (ODBC)](https://en.wikipedia.org/wiki/Open_Database_Connectivity) connections to SQL databases. An ODBC driver is needed to provide a translation layer between KiCad and the underlying SQL database implementation ([SQLite](https://www.sqlite.org/index.html), [Postgres](https://www.postgresql.org/), etc).
 
-Normally, the SQLite and the SQLite ODBC driver can be simply installed via homebrew:
+#### Install SQLite and the SQLite ODBC driver
+
+SQLite and the SQLite ODBC driver can be installed via homebrew:
 
 ```bash
 brew install sqlite sqliteodbc
-```
-
-However, KiCad is currently compiled as an Intel (`x86_64`) application and runs on Apple Silicon using the [Rosetta translation layer](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment).  As a result, KiCad requires an ODBC driver compiled for the same architecture (`x86_64`).  Running `brew install sqliteodbc` on homebrew for Apple Silicon will install the ODBC driver compiled for `arm64`, rather than the `x86_64` one. This will cause [an error](https://forum.kicad.info/t/kicad-the-case-for-database-driven-design/34621/137?u=cdwilson) like the following:
-
-```
-Symbol library 'qa_dblib' failed to load.
-
-Could not load database library: could not connect to database KiCad (/Users/vagrant/kicad/thirdparty/nanodbc/nanodbc/nanodbc.cpp:996: 0100: [unixODBC][Driver Manager]Can't open lib '/opt/homebrew/Cellar/sqliteodbc/0.9998/lib/libsqlite3odbc.so' : file not found )
-```
-
-Instead, we need to install homebrew for `x86_64`, and use that homebrew to install `sqliteodbc` for `x86_64`.
-
-#### Install Rosetta 2
-
-Make sure Rosetta2 is installed:
-
-```bash
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
-```
-
-#### Create a duplicate terminal app that runs under Rosetta 2 (x86_64)
-
-Create a duplicate terminal app (iTerm.app, Terminal.app, etc):
-
-![duplicate_iterm](images/duplicate_iterm.png)
-
-Rename the duplicate terminal app to make it clear that it's running under Rosetta2 (I appended `x86_64` to the app's file name):
-
-![rename_iterm](images/rename_iterm.png)
-
-Right click on the duplicate terminal app and choose "Get Info":
-
-![get_info](images/get_info.png)
-
-Check the "Open with Rosetta" checkbox:
-
-![open_using_rosetta](images/open_using_rosetta.png)
-
-#### Install homebrew for x86_64
-
-Open the duplicate x86_64 terminal app and install homebrew:
-
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-#### Install the SQLite ODBC Driver
-
-Install the x86_64 [SQLite ODBC Driver](http://www.ch-werner.de/sqliteodbc/):
-
-```bash
-brew install sqliteodbc
 ```
 
 #### Install GUI Apps
@@ -116,15 +66,29 @@ Click the "Add a driver" button:
 
 ![odbc_drivers](images/odbc_drivers.png)
 
-In the dialog box, input the following settings and click "OK":
+Homebrew installs the ODBC driver in a different location depending on whether homebrew was installed for an Intel (`x86_64`) or Apple Silicon (`arm64`) based Mac. Make sure to use the correct paths for your system and click "OK" in the dialog box:
 
-**Description of the driver:** `SQLite`
+{{< tabgroup >}}
+  {{< tab name="Intel (x86_64)" >}}
+  **Description of the driver:** `SQLite3`
 
-**Driver file name:** `/usr/local/lib/libsqlite3odbc.dylib`
+  **Driver file name:** `/usr/local/lib/libsqlite3odbc.dylib`
 
-**Setup file name:** `/usr/local/lib/libsqlite3odbc.dylib`
+  **Setup file name:** `/usr/local/lib/libsqlite3odbc.dylib`
 
-**Driver defined as:** `User`
+  **Driver defined as:** `User`
+  {{< /tab >}}
+
+  {{< tab name="Apple Silicon (arm64)" >}}
+  **Description of the driver:** `SQLite3`
+
+  **Driver file name:** `/opt/homebrew/lib/libsqlite3odbc.dylib`
+
+  **Setup file name:** `/opt/homebrew/lib/libsqlite3odbc.dylib`
+
+  **Driver defined as:** `User`
+  {{< /tab >}}
+{{< /tabgroup >}}
 
 ![add_driver](images/add_driver.png)
 
@@ -137,8 +101,10 @@ This will write the following ODBC configuration files to `~/Library/ODBC`:
 - `odbc.ini`
 - `odbcinst.ini`
 
-In this simple example, `odbc.ini` will be empty and `odbcinst.ini` should contain the following config:
+In this simple example, `odbc.ini` will initially be empty and `odbcinst.ini` should contain the following config:
 
+{{< tabgroup >}}
+  {{< tab name="Intel (x86_64)" >}}
 ```ini
 [ODBC Drivers]
 SQLite = Installed
@@ -147,6 +113,19 @@ SQLite = Installed
 Driver = /usr/local/lib/libsqlite3odbc.dylib
 Setup  = /usr/local/lib/libsqlite3odbc.dylib
 ```
+  {{< /tab >}}
+
+  {{< tab name="Apple Silicon (arm64)" >}}
+```ini
+[ODBC Drivers]
+SQLite = Installed
+
+[SQLite]
+Driver = /opt/homebrew/lib/libsqlite3odbc.dylib
+Setup  = /opt/homebrew/lib/libsqlite3odbc.dylib
+```
+  {{< /tab >}}
+{{< /tabgroup >}}
 
 # Create a test KiCad project
 
@@ -190,8 +169,6 @@ Open the `qa_dblib.kicad_dbl` file in a text editor and make sure the `Driver` a
     ]
 }
 ```
-
-
 
 Open the Symbol Libraries editor by clicking on "Preferences" → "Manage Symbol Libraries…" and then click on the "Project Specific Libraries" tab (this process is the same if you wanted to add this to the global libraries instead).
 
