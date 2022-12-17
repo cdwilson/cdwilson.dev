@@ -14,7 +14,7 @@ typora-copy-images-to: ./images
 
 {{< notice info >}}
 
-On December 11, 2022 the KiCad team [announced](https://social.adamwolf.org/@adamwolf/109496840211680309) support for macOS universal builds in the 6.99 [nightly releases](https://www.kicad.org/download/macos/). Using a universal build greatly simplifies the process of setting up database libraries and is *strongly recommended*. If you are using an `x86_64` nightly build released before December 12, 2022 (i.e. the file does *NOT* start with `kicad-unified-universal`), make sure to follow the old instructions found here:
+On December 11, 2022 the KiCad team [announced](https://social.adamwolf.org/@adamwolf/109496840211680309) support for macOS universal builds in the 6.99 [nightly releases](https://www.kicad.org/download/macos/). Using a universal build greatly simplifies the process of setting up database libraries and is *strongly recommended*. If you are using an older `x86_64` nightly build released before December 12, 2022 on a Mac with Apple Silicon (i.e. the file does *NOT* start with `kicad-unified-universal`), make sure to follow the old instructions found here:
 
 https://cdwilson.dev/articles/kicad-database-libraries-on-apple-silicon/
 
