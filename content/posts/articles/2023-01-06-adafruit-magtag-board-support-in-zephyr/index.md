@@ -122,7 +122,7 @@ So, if we want to add a new board definition for our app, there are two places w
 
 If we add the board definition into the upstream `zephyr` repository, it would make the board definition available to anybody who uses Zephyr. However, it can take a while for the Zephyr developers to review and approve a PR to add a new board definition. It is also [required to add documentation](https://docs.zephyrproject.org/latest/hardware/porting/board_porting.html#contributing-your-board) for the board as part of the PR, which adds some additional overhead to the submission process.
 
-For now, we're just going to add the board definition in the `magtag-demo` repo so that we can distribute it immediately alongside the Golioth training apps that depend on it.
+For now, we're just going to add the custom board definition in the `magtag-demo` repo (as described [here](https://docs.zephyrproject.org/3.2.0/develop/application/index.html#custom-board-devicetree-and-soc-definitions)) so that we can distribute it immediately alongside the Golioth training apps without waiting for it to be upstreamed.
 
 ## Create the new board directory
 
@@ -148,25 +148,6 @@ Now that we've got a new branch checked out, we can create a new board directory
 mkdir -p boards/xtensa/adafruit-magtag
 ```
 
-## Create the documentation directory
-
-This step is optional, but it's good practice to create the documentation directory if you're planning to upstream the board definition in the future:
-
-```sh
-# create the doc/ and doc/img subdirectories
-mkdir -p boards/xtensa/adafruit-magtag/doc/img
-```
-
-This will copy the documentation template from the zephyr Git repo and download the board image file from Adafruit's website:
-
-```sh
-# copy the documentation template into the doc directory
-cp ${ZEPHYR_BASE}/doc/templates/board.tmpl boards/xtensa/adafruit-magtag/doc/index.rst
-
-# download the board image into the doc/img directory
-wget --output-document=boards/xtensa/adafruit-magtag/doc/img/adafruit_magtag.jpg https://cdn-shop.adafruit.com/970x728/4800-11.jpg
-```
-
 ## Define the board hardware using Devicetree
 
 ![device-tree-logo](images/devicetree-logo-dark.png)
@@ -175,9 +156,9 @@ In order to generate customized firmware for each supported board, Zephyr needs 
 
 {{< notice note >}}
 
-It's easy to get overwhelmed when you first start working with devicetree. Hang in there! You'll soon see that the benefits of devicetree are worth the initial learning curve.
+It's easy to get overwhelmed when you first start trying to understand devicetree. Hang in there! You'll soon see that the benefits of devicetree outweigh the initial learning curve.
 
-If you've never worked with devicetree before, I would encourage you to spend some time reading the [Introduction to devicetree](https://docs.zephyrproject.org/latest/build/dts/intro.html) in the Zephyr docs before continuing along with this article. If you prefer a video introduction, check out Marti Bolivar's talk [A deep dive into the Zephyr 2.5 device model](https://www.youtube.com/watch?v=sWaxQyIgEBY) from the 2021 Zephyr Developer's Summit. [Device Tree: hardware description for everybody!](https://youtu.be/Nz6aBffv-Ek) is another helpful video, although it is specific to the devicetree in Linux rather than Zephyr (there are some differences).
+If you've never worked with devicetree before, I would encourage you to spend some time reading the [Introduction to devicetree](https://docs.zephyrproject.org/latest/build/dts/intro.html) in the Zephyr docs. If you prefer a video introduction, check out Marti Bolivar's talk [A deep dive into the Zephyr 2.5 device model](https://www.youtube.com/watch?v=sWaxQyIgEBY) from the 2021 Zephyr Developer's Summit.
 
 [
 ](https://training.golioth.io/docs/category/basic-io-exercises)
@@ -194,7 +175,7 @@ To describe the hardware available on the board, we need to add a human-readable
 
 ```plaintext
 boards/xtensa/adafruit-magtag
-└── adafruit-magtag.dts
+└── adafruit_magtag.dts
 ```
 
 First, we add a line specifying the devicetree syntax version we're going to be using in the file:
@@ -213,7 +194,20 @@ Next, we include the ESP32-S2 SoC devicetree definitions provided by Espressif i
 
 This file defines the hardware available on the ESP32-S2 SoC such as the available CPUs, flash memory, WiFi, GPIOs, etc. Note that many of the peripherals defined in this file are disabled by default (`status = "disabled";`). We'll enable some of these peripherals used on the MagTag board later on in the `adafruit-magtag.dts` file.
 
+## Create the documentation directory (optional)
 
+This step is optional, but it's good practice to create the documentation directory if you're planning to upstream the board definition in the future. The following will copy the Zephyr documentation template and download the board image file from Adafruit's website:
+
+```sh
+# create the doc/ and doc/img subdirectories
+mkdir -p boards/xtensa/adafruit-magtag/doc/img
+
+# copy the documentation template into the doc directory
+cp ${ZEPHYR_BASE}/doc/templates/board.tmpl boards/xtensa/adafruit-magtag/doc/index.rst
+
+# download the board image into the doc/img directory
+wget --output-document=boards/xtensa/adafruit-magtag/doc/img/adafruit_magtag.jpg https://cdn-shop.adafruit.com/970x728/4800-11.jpg
+```
 
 # Feedback
 
