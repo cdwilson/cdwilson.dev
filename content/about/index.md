@@ -6,7 +6,7 @@ typora-copy-images-to: ./images
 
 I'm passionate about technology that makes electronics more approachable and accessible to everyone.
 
-In my spare time, I'm bootstrapping [Common Ground Electronics](https://cgnd.dev/), a small electronics design consultancy.
+In my spare time, I'm bootstrapping [Common Ground Electronics](https://cgnd.dev/), a boutique embedded systems engineering services firm.
 
 I spent most of my career working as a hardware design engineer specializing in embedded systems designed for the Internet of Things.
 

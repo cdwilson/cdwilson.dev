@@ -4,7 +4,7 @@ slug: projects
 typora-copy-images-to: ./images
 ---
 
-[Common Ground Electronics](https://cgnd.dev/) :: Electronics design services consultancy
+[Common Ground Electronics](https://cgnd.dev/) :: A boutique embedded systems engineering services firm
 
 # Past Projects
 
