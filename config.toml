@@ -19,6 +19,7 @@ description = "Chris Wilson's personal website"
 keywords = ""
 info = ["I build things.", "Usually with electronics.", "Preferably open-source."]
 avatarURL = "images/cdwilson.jpg"
+# gravatar = "christopher.david.wilson@gmail.com"
 dateFormat = "January 2, 2006"
 since = 2014
 # Git Commit in Footer, uncomment the line below to enable it
@@ -30,9 +31,9 @@ rtl = false
 # "auto" (use preference set by browser)
 # "dark" (dark background, light foreground)
 # "light" (light background, dark foreground) (default)
-colorScheme = "light"
+colorScheme = "auto"
 # Hide the toggle button, along with the associated vertical divider
-hideColorSchemeToggle = true
+hideColorSchemeToggle = false
 # Series see also post count
 maxSeeAlsoItems = 5
 # Custom CSS
@@ -77,32 +78,39 @@ author = "authors"
 
 [[params.social]]
 name = "Github"
-icon = "fa fa-2x fa-github"
+icon = "fa-brands fa-github fa-2x"
 weight = 1
 url = "https://github.com/cdwilson"
 
 [[params.social]]
+name = "Bluesky"
+icon = "fa-brands fa-bluesky fa-2x"
+weight = 2
+url = "https://bsky.app/profile/cdwilson.dev"
+rel = "me"
+
+[[params.social]]
 name = "Mastodon"
-icon = "fa fa-2x fa-mastodon"
+icon = "fa-brands fa-mastodon fa-2x"
 weight = 2
 url = "https://mastodon.social/@cdwilson"
 rel = "me"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa fa-2x fa-twitter"
+name = "X (Twitter)"
+icon = "fa-brands fa-x-twitter fa-2x"
 weight = 2
 url = "https://twitter.com/chrismakesstuff"
 
 [[params.social]]
 name = "LinkedIn"
-icon = "fa fa-2x fa-linkedin"
+icon = "fa-brands fa-linkedin fa-2x"
 weight = 3
 url = "https://www.linkedin.com/in/cdwilson"
 
 [[params.social]]
 name = "RSS"
-icon = "fa fa-2x fa-rss"
+icon = "fa fa-rss fa-2x"
 weight = 4
 url = "https://cdwilson.dev/index.xml"
 rel = "alternate"

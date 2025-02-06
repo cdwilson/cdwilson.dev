@@ -20,7 +20,7 @@ I've been wanting to set up a small electronics workspace in my home office for 
 
 I've made a couple small improvements since the original tweet below, so I wanted to post a follow-up with a more detailed look at the build process and some of the things I learned along the way.
 
-{{< tweet user="chrismakesstuff" id="1527045357414191104" >}}
+{{< x user="chrismakesstuff" id="1527045357414191104" >}}
 
 # The requirements
 

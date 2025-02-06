@@ -26,13 +26,13 @@ A while back, I was looking for a way to fire up the debugger on a [STM32 NUCLEO
 
 In a moment of serendipity, I ran across a tweet from [@jaydcarlson](https://twitter.com/jaydcarlson) where he mentioned "doing USB over IP with VirtualHere".
 
-{{< tweet user="jaydcarlson" id="1409896152766586893" >}}
+{{< x user="jaydcarlson" id="1409896152766586893" >}}
 
 It turns out that [VirtualHere](https://www.virtualhere.com/home) is a ✨magical✨ piece of software that can **make USB devices plugged into one computer (the "server") *appear* as if they are directly attached to another computer (the "client")**.
 
 Any USB device you want to access over the network must be directly connected to a "server" running the VirtualHere server software.   The VirtualHere server runs entirely in userspace and is statically complied (no linux run-time libraries are required on the server).  It can be installed on a wide variety of devices and operating systems, ranging from embedded devices like a [Raspberry Pi](https://www.raspberrypi.org/) to x86_64-based servers.
 
-Once the server is running, any "client" running the VirtualHere client software can remotely "use" any of the USB devices attached to the server.  These USB devices appear to the client as if they were directly attached to the client's USB ports–the client has no knowledge that the USB device is being shared over the network. 
+Once the server is running, any "client" running the VirtualHere client software can remotely "use" any of the USB devices attached to the server.  These USB devices appear to the client as if they were directly attached to the client's USB ports–the client has no knowledge that the USB device is being shared over the network.
 
 ![VirtualHere-Diagram700.jpg](https://www.virtualhere.com/sites/default/files/VirtualHere-Diagram700.jpg)
 
@@ -162,8 +162,8 @@ Login once again using the same username:password as above (`debian:temppwd`).
 At this point, you can verify the bootloader, kernel, and image versions:
 
 ```bash
-debian@BeagleBone:~$ sudo beagle-version 
-[sudo] password for debian: 
+debian@BeagleBone:~$ sudo beagle-version
+[sudo] password for debian:
 eeprom:[A335BNLT0A5A1613BBBK1283]
 model:[TI_AM335x_BeagleBone_Black]
 dogtag:[BeagleBoard.org Debian Bullseye Minimal Image 2022-07-01]
@@ -258,7 +258,7 @@ Right-click on any device you'd like to connect to and choose "Use this device".
 
 ![virtualhere_client_connected](images/virtualhere_client_connected.png)
 
-You can now use this USB device as if it was directly connected to your computer.  
+You can now use this USB device as if it was directly connected to your computer.
 
 It shows up in the Finder as a normal USB storage device:
 
