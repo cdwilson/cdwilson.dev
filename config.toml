@@ -167,7 +167,7 @@ loading = "lazy"
     disable = true
   [privacy.instagram]
     disable = true
-  [privacy.twitter]
+  [privacy.x]
     disable = false
     simple = true
   [privacy.vimeo]
@@ -176,5 +176,5 @@ loading = "lazy"
     disable = true
 
 [services]
-  [services.twitter]
+  [services.x]
     disableInlineCSS = true
