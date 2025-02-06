@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2022 Chris Wilson <christopher.david.wilson@gmail.com>
+# SPDX-FileCopyrightText: Chris Wilson <christopher.david.wilson@gmail.com>
 #
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: MIT OR Apache-2.0
 
 import sys
 
