@@ -100,7 +100,7 @@ rel = "me"
 name = "X (Twitter)"
 icon = "fa-brands fa-x-twitter fa-2x"
 weight = 2
-url = "https://twitter.com/chrismakesstuff"
+url = "https://x.com/chrismakesstuff"
 
 [[params.social]]
 name = "LinkedIn"

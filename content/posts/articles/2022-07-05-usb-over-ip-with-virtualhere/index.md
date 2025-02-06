@@ -24,7 +24,7 @@ A while back, I was looking for a way to fire up the debugger on a [STM32 NUCLEO
 
 ![drake_debug](images/drake_debug.jpeg)
 
-In a moment of serendipity, I ran across a tweet from [@jaydcarlson](https://twitter.com/jaydcarlson) where he mentioned "doing USB over IP with VirtualHere".
+In a moment of serendipity, I ran across a tweet from [@jaydcarlson](https://x.com/jaydcarlson) where he mentioned "doing USB over IP with VirtualHere".
 
 {{< x user="jaydcarlson" id="1409896152766586893" >}}
 

@@ -22,7 +22,7 @@ The keyboard is ✨beautiful✨ and the custom-sculpted keycaps feel really grea
 
 Although this keymap works really well for me personally, it's probably not the right keymap for everyone. The Model 100 is a roughly 60%-ish (4 rows of keys) keyboard, so **it may seem odd that I'm only using 44 of the 64 available keys on the keyboard**. I thought it might be interesting to walk through my thought process step-by-step and discuss some of the requirements that drove the decisions about where to map each key.
 
-# tldr; [Final](https://twitter.com/laen/status/1404208093098123271) Keymap
+# tldr; [Final](https://x.com/laen/status/1404208093098123271) Keymap
 
 If you don't care to read the details below, here's the summary of the final keymap.
 
@@ -80,7 +80,7 @@ As a result, I blocked the 18 red keys on all layers:
 
 This is probably my most controversal requirement given that the palm key is arguably the Model 100's most unique feature, so I expect this is the point in the article where most Model 100 owners are gonna be like "*this guy's nuts…I'm out* 🪂"
 
-However, I have larger hands and I found the palm ("fun") keys on the Model 100 *really* uncomfortable to press with my palms (it requires rotating my wrists inwards in a really unnatural way for me). Maybe I'm doing it wrong? 🤷🏻‍♂️ 
+However, I have larger hands and I found the palm ("fun") keys on the Model 100 *really* uncomfortable to press with my palms (it requires rotating my wrists inwards in a really unnatural way for me). Maybe I'm doing it wrong? 🤷🏻‍♂️
 
 Once I removed the palm keys and switches completely, the keyboard became much more comfortable for me to use:
 
@@ -111,7 +111,7 @@ On the right thumb cluster I placed the `Enter` and `Space` keys, with the most 
 
 ##### Requirement #4: Space Cadet - tap `shift` for parenthesis symbols `(` and `)`
 
-On a standard ANSI keyboard, the parenthesis symbols `(` and `)` are located in the symbol row (`shift` + `9` and `shift` + `0` respectively). However, I type parenthesis frequently when programming (more often than `{}` or `[]`), so I wanted to be able to type them with a single, unchorded keypress. 
+On a standard ANSI keyboard, the parenthesis symbols `(` and `)` are located in the symbol row (`shift` + `9` and `shift` + `0` respectively). However, I type parenthesis frequently when programming (more often than `{}` or `[]`), so I wanted to be able to type them with a single, unchorded keypress.
 
 On the Hot Dox keyboard I used previously, I enabled the [QMK Space Cadet feature](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_space_cadet.md) which enables "tapping" the left and right `shift` keys to type  `(` and `)` respectively (holding the shift keys cause them to function like normal shift keys). Luckily, the [Kaleidoscope firmware](https://github.com/keyboardio/Kaleidoscope) on the Model 100 also supports this same [Space Cadet feature](https://kaleidoscope.readthedocs.io/en/latest/plugins/Kaleidoscope-SpaceCadet.html). I've built up a strong muscle memory around this Space Cadet feature over the years, so it was important to me that the `shift`/`()` keys were typed by the pinky fingers, rather than by the thumbs as prescribed the default Model 100 keymap.
 
@@ -154,7 +154,7 @@ Also, since there is one open key to the left of the `{` key, I placed the macOS
 
 ![requirement_6e_layer_1](images/requirement_6e_layer_1.png)
 
-##### Requirement #7: Left-handed typing of `ESC` 
+##### Requirement #7: Left-handed typing of `ESC`
 
 For some apps, I need to be able to type the `ESC` key with my left hand while mousing with my right hand.  In addition, I have existing muscle memory for typing `ESC` in the top left of the keyboard with my left pinky finger.  I placed the `ESC` key in the one open key to the left of the `1` key on `Layer #1`.
 
